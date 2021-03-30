@@ -15,21 +15,21 @@
  */
 
 int main() {
-    const double power = 2.0;
+    const double POWER = 2.0;
 
-    uint8_t F;
-    uint8_t R;
+    uint16_t F;
+    uint16_t R;
     float C;
     float L;
-    uint8_t E;
+    uint16_t E;
     double I;
 
-    std::cout << "Please input your values in a space delimited string in the format of:" << std::endl;
-    std::cout << "Frequency Resistance Capacitance Inductance EMF" << std::endl;
-    std::scanf("%hhu %hhu %f %f %hhu", &F, &R, &C, &L, &E);
-    std::cout << +F << " " << +R << " " << C << " " << L << " " << +E << std::endl;
+    std::cout << "Please input your values in a space delimited string in the format of:" << std::endl
+              << "Frequency Resistance Capacitance Inductance EMF" << std::endl;
 
-    I = E / sqrt(pow(R, power) + pow(((2 * M_PI * F * L) - ( 1 / (2 * M_PI * F * C))), power));
+    std::cin >> F >> R >> C >> L >> E;
+
+    I = E / sqrt(pow(R, POWER) + pow(((2 * M_PI * F * L) - ( 1 / (2 * M_PI * F * C))), POWER));
 
     std::cout << "Current: " <<  I << std::endl;
 
