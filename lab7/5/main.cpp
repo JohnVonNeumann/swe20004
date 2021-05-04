@@ -94,9 +94,10 @@ void print_lines_in_file(string filename) {
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+    string help_string = "Enter your choice: 1 -4\n1. Enter new student details to the record.\n2. Enter new tutor details to the record.\n3. Display student record.\n4. Display tutor record.\n5. Exit.";
     int choice;
     do {
-        cout << "Enter your choice: 1 -4\n1. Enter new student details to the record.\n2. Enter new tutor details to the record.\n3. Display student record.\n4. Display tutor record.\n5. Exit." << endl;
+        cout << help_string << endl;
         cin >> choice;
         switch (choice) {
             case 1:
@@ -113,6 +114,8 @@ int main() {
                 continue;
             case 5:
                 break;
+            default:
+                cout << help_string << endl;
         }
     } while (choice != 5);
     return 0;
