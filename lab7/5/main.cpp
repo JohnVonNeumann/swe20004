@@ -23,12 +23,30 @@ struct tutor_t {
 };
 
 student_t create_student() {
+    ofstream file;
     student_t student;
     student.name = "Henry Lollenburg";
     student.student_id = 12345678;
     student.course_details = "Computer Science";
     student.units = {"Databases 101", "Operating Systems", "Networking", "Security"};
     student.grades = {"HD", "HD", "P", "F"};
+    file.open("student.txt", ios_base::app);
+    file << student.name << " | " << student.student_id << " | " << student.course_details << " | ";
+    for (int i = 0; i < MAX_UNITS; ++i) {
+        if (i != 0) {
+            file << ", ";
+        }
+        file << student.units[i];
+    }
+    file << " | ";
+    for (int i = 0; i < MAX_UNITS; ++i) {
+        if (i != 0) {
+            file << ", ";
+        }
+        file << student.grades[i];
+    }
+    file << endl;
+    file.close();
     return student;
 }
 
