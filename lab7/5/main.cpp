@@ -22,7 +22,7 @@ struct tutor_t {
     array<string, MAX_UNITS> class_timetable;
 };
 
-student_t create_student() {
+void create_student() {
     ofstream file;
     student_t student;
     student.name = "Henry Lollenburg";
@@ -47,10 +47,9 @@ student_t create_student() {
     }
     file << endl;
     file.close();
-    return student;
 }
 
-tutor_t create_tutor() {
+void create_tutor() {
     ofstream file;
     tutor_t tutor;
     tutor.name = "John Von Neumann";
@@ -75,7 +74,6 @@ tutor_t create_tutor() {
     }
     file << endl;
     file.close();
-    return tutor;
 }
 
 void print_lines_in_file(string filename) {
