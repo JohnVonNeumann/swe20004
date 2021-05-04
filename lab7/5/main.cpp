@@ -44,5 +44,24 @@ tutor_t create_tutor() {
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+    int choice;
+    do {
+        cout << "Enter your choice: 1 -4\n1. Enter new student details to the record.\n2. Enter new tutor details to the record.\n3. Display student record.\n4. Display tutor record.\n5. Exit." << endl;
+        cin >> choice;
+        switch (choice) {
+            case 1:
+                create_student();
+                continue;
+            case 2:
+                create_tutor();
+                continue;
+            case 3:
+                continue;
+            case 4:
+                continue;
+            case 5:
+                break;
+        }
+    } while (choice != 5);
     return 0;
 }
