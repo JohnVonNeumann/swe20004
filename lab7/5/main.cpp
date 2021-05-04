@@ -78,6 +78,20 @@ tutor_t create_tutor() {
     return tutor;
 }
 
+void print_lines_in_file(string filename) {
+    string line;
+    ifstream file(filename);
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+        file.close();
+    }
+    else {
+        cout << "Unable to open file";
+    }
+}
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
     int choice;
@@ -92,8 +106,10 @@ int main() {
                 create_tutor();
                 continue;
             case 3:
+                print_lines_in_file("student.txt");
                 continue;
             case 4:
+                print_lines_in_file("tutor.txt");
                 continue;
             case 5:
                 break;
