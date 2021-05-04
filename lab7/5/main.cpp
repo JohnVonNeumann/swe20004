@@ -5,6 +5,8 @@
 using namespace std;
 
 const int MAX_UNITS = 4;
+const string STUDENT_FILE = "student.txt";
+const string TUTOR_FILE = "tutor.txt";
 
 struct student_t {
     string name;
@@ -30,7 +32,7 @@ void create_student() {
     student.course_details = "Computer Science";
     student.units = {"Databases 101", "Operating Systems", "Networking", "Security"};
     student.grades = {"HD", "HD", "P", "F"};
-    file.open("student.txt", ios_base::app);
+    file.open(STUDENT_FILE, ios_base::app);
     file << student.name << " | " << student.student_id << " | " << student.course_details << " | ";
     for (int i = 0; i < MAX_UNITS; ++i) {
         if (i != 0) {
@@ -57,7 +59,7 @@ void create_tutor() {
     tutor.course_details = "Department of Everything";
     tutor.units = {"Building the Bomb for Noobs", "Quantum Physics for Housewives", "Martini Making 101", "How to be a Lord"};
     tutor.class_timetable = {"Tuesday 10am", "Wednesday 3pm", "Thursday 5pm", "Friday 8am"};
-    file.open("tutor.txt", ios_base::app);
+    file.open(TUTOR_FILE, ios_base::app);
     file << tutor.name << " | " << tutor.staff_id << " | " << tutor.course_details << " | ";
     for (int i = 0; i < MAX_UNITS; ++i) {
         if (i != 0) {
@@ -104,10 +106,10 @@ int main() {
                 create_tutor();
                 continue;
             case 3:
-                print_lines_in_file("student.txt");
+                print_lines_in_file(STUDENT_FILE);
                 continue;
             case 4:
-                print_lines_in_file("tutor.txt");
+                print_lines_in_file(TUTOR_FILE);
                 continue;
             case 5:
                 break;
